@@ -1,50 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 html {
 	width: 100%;
 	height: 100%;
-	background: radial-gradient(ellipse at top, #e66465, transparent),
-            radial-gradient(ellipse at bottom, #4d9f0c, transparent);
-}
-
-.title {
+	background: radial-gradient(ellipse at top, #e66465, transparent), radial-gradient(ellipse at bottom, #4d9f0c, transparent);
+  }
+  
+  .title {
 	margin-top: 1.25em;
 	color: #eee;
 	text-align: center;
 	text-shadow: 1px 1px 0 black;
-}
-
-.items {
+  }
+  
+  .items {
 	padding: 21px;
-}
-
-.item {
+  }
+  
+  .item {
 	width: calc((100% / 3) - 26px);
 	height: 90px;
 	padding: 2.125em 0 1.25em;
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+		-ms-user-select: none;
+			user-select: none;
 	position: absolute;
 	border-radius: 3px;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 	background: rgba(255, 255, 255, 0.75);
 	transition: background-color 0.1s ease-in-out;
+	cursor: -webkit-grab;
 	cursor: grab;
 	text-align: center;
-
-}
-.is-active {
-		background: rgba(255, 255, 255, 0.9);
-		cursor: grabbing;
-	}
+  }
+  .item.is-active {
+	background: rgba(255, 255, 255, 0.9);
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+  }
