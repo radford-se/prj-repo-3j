@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import '../public/index.html';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Motion, spring} from 'react-motion';
+// In your render...
+
 
 const dataStructure = [
 	// structure that models our initial rendered view of items
