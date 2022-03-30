@@ -30,10 +30,11 @@ body{
     font-size: 8vw;
 }
   
-  .wrapper {
+  /* .wrapper {
     /*margin-top: 80px;
-    margin-bottom: 80px;*/
-  }
+    margin-bottom: 80px;
+  }*/
+ 
   
   .form-signin {
     max-width: 380px;
