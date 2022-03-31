@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="../../server/index.js"></script>
+    
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
                 <button type="button" class="btn login">login</button>
                 <p><a href="javascript:void(0)">Forgotten account</a></p>
                 <hr/>
-                <button type="button" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true" onclick="loginFormSignInWithGoogle()" id="loginFormGLogin"></i> sign in with google</button>
+                <button id="loginFormGLogin" onclick="googleSignIn()" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg"></i> sign in with google</button>
             </form>
         </div>
     
@@ -39,5 +39,6 @@
         </div>
     
     </div>
+    <script src="../../server/index.js"></script>
 </body>
 </html>
