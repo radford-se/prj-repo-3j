@@ -1,45 +1,21 @@
-// Import the functions you need from the SDKs you need
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-import { initializeApp } from "@firebase/app";
-import "@firebase/auth";
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBxl17h1CbcNQB1ZJF93DDx16mqYMVxabM",
-  authDomain: "ohayo-9132f.firebaseapp.com",
-  projectId: "ohayo-9132f",
-  storageBucket: "ohayo-9132f.appspot.com",
-  messagingSenderId: "301894492582",
-  appId: "1:301894492582:web:4058c1da1649ad7d78ef67"
-};
+var firebase = require('firebase');
+var firebaseui = require('firebaseui'); 
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const auth = firebase.getAuth(app);
-auth.useDeviceLanguage();
-document.getElementById('loginFormGLogin').addEventListener('click', googleSignIn); 
-function googleSignIn() {
-  const provider = new firebase.GoogleAuthProvider();
-  signInWithRedirect(auth, provider);
-  getRedirectResult(auth)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access Google APIs.
-    const credential = provider.credentialFromResult(result);
-    const token = credential.accessToken;
-
-    // The signed-in user info.
-    const user = result.user;
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  });
-}
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ],
+  // Other config options...
+});
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    // List of OAuth providers supported.
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+  ],
+  // Other config options...
+});
+ui.start('#firebaseui-auth-container', uiConfig);
 
 function toggleSignup(){
   document.getElementById("login-toggle").style.backgroundColor="#fff";
