@@ -35,7 +35,7 @@ let weather = {
       document.querySelector(".humidity").innerText =
         "Humidity: " + humidity + "%";
       document.querySelector(".wind").innerText =
-        "Wind speed: " + speed + " km/h";
+        "Wind speed: " + speed + " m/s";
     }
     else {
       document.querySelector(".temp").innerText = temp + "°F";
