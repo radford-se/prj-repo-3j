@@ -55,12 +55,12 @@ document.querySelector(".search button").addEventListener("click", function () {
   weather.search();
 });
 
-document.querySelector(".imperial button").addEventListener("click", function () {
+document.querySelector("#imperial").addEventListener("click", function () {
   measurement = measurement.replace("metric","imperial");
   weather.fetchWeather(document.querySelector(".city").innerText, measurement);
 });
 
-document.querySelector(".metric button").addEventListener("click", function () {
+document.querySelector("#metric").addEventListener("click", function () {
   measurement = measurement.replace("imperial","metric");
   weather.fetchWeather(document.querySelector(".city").innerText, measurement);
 });
