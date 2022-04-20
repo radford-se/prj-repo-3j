@@ -38,32 +38,8 @@ button {
   transition: 0.2s ease-in-out;
 }
 
-.imperial {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#imperial{
-  border-radius: 50%;
-  border: none;
-  height: 44px;
-  width: 44px;
-  outline: none;
-  background: #0061d12b;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-
-}
-
-.metric {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#metric{
+#imperial , #metric {
+  display:inline-block;
   margin: 0.5em;
   border-radius: 50%;
   border: none;
@@ -71,10 +47,12 @@ button {
   width: 44px;
   outline: none;
   background: #7c7c7c2b;
-  color: rgb(214, 20, 20);
+  color: rgb(111, 176, 216);
   cursor: pointer;
   transition: 0.2s ease-in-out;
-}
+  }
+
+
 
 input.search-bar {
   border: none;
