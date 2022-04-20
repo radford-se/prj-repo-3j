@@ -38,17 +38,29 @@ button {
   transition: 0.2s ease-in-out;
 }
 
+.imperial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #imperial{
-  margin: 0.5em;
   border-radius: 50%;
   border: none;
   height: 44px;
   width: 44px;
   outline: none;
-  background: #7c7c7c2b;
+  background: #0061d12b;
   color: white;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #metric{
@@ -59,7 +71,7 @@ button {
   width: 44px;
   outline: none;
   background: #7c7c7c2b;
-  color: white;
+  color: rgb(214, 20, 20);
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
