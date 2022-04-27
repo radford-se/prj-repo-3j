@@ -23,11 +23,11 @@
       </div>
     </div>
 
-    <div class="item">
+    <!-- <div class="item">
       <div class="item-content">
         <div id="gmailContent"></div>
       </div>
-    </div>
+    </div> -->
 
 
     <div class="item">
@@ -37,13 +37,13 @@
     </div>
 
 
-    <!-- <div class="item">
+    <div class="item">
       <div class="item-content">
-        Fourth
+        <div id="calendarContent"></div>
       </div>
     </div>
 
-    <div class="item">
+    <!-- <div class="item"> 
       <div class="item-content">
         Fifth
       </div>
@@ -120,6 +120,10 @@
 
     $(function () {
       $("#gmailContent").load("mail.html");
+    });
+
+    $(function () {
+      $("#calendarContent").load("calendar.html");
     });
   </script>
 
