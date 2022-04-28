@@ -2,6 +2,7 @@
   "dependencies": {
     "@firebase/auth": "^0.19.11",
     "muuri": "^0.9.5",
+    "newsapi": "^2.4.1",
     "react-motion": "^0.5.2",
     "web-animations-js": "^2.3.2"
   }
