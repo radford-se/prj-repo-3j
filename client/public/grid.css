@@ -59,6 +59,7 @@ html {
 	cursor: pointer;
 }
 
+
   .item.muuri-item-dragging .item-content {
 	background: blue;
   }
