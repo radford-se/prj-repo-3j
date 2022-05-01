@@ -18,7 +18,7 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-4">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-1">
     <div class="container-fluid" style="font-size:20px">
       <h1 class="navbar-brand" href="home.html">Ohayō</h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
                   </li>       
                   
                   <li class="nav-item mx-1">
-                      <a id="signoutlink" class="nav-link" href="">Sign Out</a>
+                      <a id="signoutlink" class="nav-link" href="home.html">Sign Out</a>
                   </li> 
               </ul>
           </form>
@@ -127,6 +127,61 @@
 
   </div>
 
+  <script>
+    //---------------------------------------------references--------------------------------------------------------------//
+    let userlink = document.getElementById('userlink');
+    let signoutlink = document.getElementById('signoutlink');
+    let header = document.getElementById('hh');
+    var currentUser = null;
+    
+    //---------------------------------------------functions--------------------------------------------------------------//
+    
+          function getUsername(){
+            let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+            if(keepLoggedIn == "yes"){
+              currentUser = JSON.parse(localStorage.getItem('user'));
+            }
+            else{
+              currentUser = JSON.parse(sessionStorage.getItem('user'));
+            }
+          }
+    
+          function signout(){
+            sessionStorage.removeItem('user');
+            localStorage.removeItem('user');
+            localStorage.removeItem('keepLoggedIn')
+            window.location = "home.html";
+          }
+    
+    //---------------------------------------------windows loads--------------------------------------------------------------//
+    
+    window.onload = function(){
+            getUsername();
+            console.log(currentUser);
+            if(currentUser == null){
+              userlink.innerText = "Create New Account";
+              userlink.classList.replace("nav-link","btn");
+              userlink.classList.add("btn-success");
+              userlink.href = "register.html";
+              signoutlink.innerText = "Login";
+              signoutlink.classList.replace("nav-link","btn");
+              signoutlink.classList.add("btn-light");
+              signoutlink.href = "login.html";
+            }
+            else{
+              userlink.innerText = currentUser.username;
+              header.innerText = "welcome " + currentUser.fullname;
+              userlink.classList.replace("btn", "nav-link");
+              userlink.classList.remove("btn-primary");
+              userlink.href = "#";
+              signoutlink.innerText = "Sign Out";
+              signoutlink.classList.replace("btn", "nav-link");
+              signoutlink.classList.remove("btn-success");
+              signoutlink.href = "javascript:signout()";
+            }
+          }
+    </script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
@@ -148,6 +203,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
+
   <script>
     $(function () {
       $("#weatherContent").load("weather_display.html");
@@ -165,6 +221,9 @@
       $("#fashionContent").load("fashion_display.html");
     });
   </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 
 </body>
 
