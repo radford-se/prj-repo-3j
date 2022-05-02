@@ -12,37 +12,36 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong" style="font-size: 20px; padding-left: 5%; padding-right: 5%;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="home.html">Ohayō</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand" href="home.html">Ohayō</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a style=float:left; class="nav-link active" aria-current="page" href="home.html">Home</a>
-                        <a style=float:left; class="nav-link active" aria-current="page" href="about_us.html">About
-                            Us</a>
-                    </li>
-                </ul>
-
-                <form class="d-flex">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item mx-1">
-                            <a id="userlink" class="nav-link" href="">Username</a>
-                        </li>
-
-                        <li class="nav-item mx-1">
-                            <a id="signoutlink" class="nav-link" href="">Sign Out</a>
-                        </li>
-                    </ul>
-                </form>
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a style = float:left; class="nav-link active" aria-current="page" href="about_us.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a style = float:left; class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                </li>
+              </ul>
+                
+              <form class="d-flex">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item mx-1">
+                          <a id="userlink" class="nav-link" href="">Username</a>
+                      </li>       
+                      
+                      <li class="nav-item mx-1">
+                          <a id="signoutlink" class="nav-link" href="">Sign Out</a>
+                      </li> 
+                  </ul>
+              </form>
             </div>
         </div>
-    </nav>
+      </nav>
 
     <div class="section">
         <div class="container">
@@ -58,7 +57,7 @@
                         for their liking using drag and drop elements. This software is our teams first attempt at a relatively large scale engineering project. We hope
                         to continue our efforts and studies at Radford University so that we may find more inspiration to tackle more project such as this.  
                     </span></p>
-                    <button onclick="expandText()" id="btn">Read more</button>
+                    <button class="btn btn-primary"onclick="expandText()" id="btn">Read more</button>
                 </div>
                 <!-- <div class="social">
                     <a href=""><i class="fab fa-facebook-f"></i></a>
@@ -71,6 +70,8 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <script>
         function expandText() {
