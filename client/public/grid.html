@@ -18,16 +18,22 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-1">
-    <div class="container-fluid" style="font-size:20px">
-      <h1 class="navbar-brand" href="home.html">Ohayō</h1>
+  <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong" style="font-size: 20px; padding-left: 5%; padding-right: 5%;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="grid.html" style="text-transform: uppercase; font-size:50px">ō</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+            <li class="nav-item">
+              <a style = float:left; class="nav-link active" aria-current="page" href="about_us.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a style = float:left; class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+            </li>
           </ul>
+            
           <form class="d-flex">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item mx-1">
@@ -127,7 +133,25 @@
 
   </div>
 
-  <script>
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBxl17h1CbcNQB1ZJF93DDx16mqYMVxabM",
+    authDomain: "ohayo-9132f.firebaseapp.com",
+    projectId: "ohayo-9132f",
+    storageBucket: "ohayo-9132f.appspot.com",
+    messagingSenderId: "301894492582",
+    appId: "1:301894492582:web:4058c1da1649ad7d78ef67"
+  };
+
+  const app = initializeApp(firebaseConfig);
+
+  import {getDatabase, ref, set, child, get}
+  from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+
+  const db = getDatabase();
+
     //---------------------------------------------references--------------------------------------------------------------//
     let userlink = document.getElementById('userlink');
     let signoutlink = document.getElementById('signoutlink');
@@ -137,13 +161,8 @@
     //---------------------------------------------functions--------------------------------------------------------------//
     
           function getUsername(){
-            let keepLoggedIn = localStorage.getItem("keepLoggedIn");
-            if(keepLoggedIn == "yes"){
-              currentUser = JSON.parse(localStorage.getItem('user'));
-            }
-            else{
               currentUser = JSON.parse(sessionStorage.getItem('user'));
-            }
+              console.log(currentUser);
           }
     
           function signout(){
