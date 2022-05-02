@@ -13,7 +13,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong" style="font-size: 20px; padding-left: 5%; padding-right: 5%;">
         <div class="container-fluid">
-          <a class="navbar-brand" href="home.html">Ohayō</a>
+            <a class="navbar-brand" href="home.html" style="text-transform: uppercase; font-size:50px">ō</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,13 +29,10 @@
                 
               <form class="d-flex">
                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item mx-1">
-                          <a id="userlink" class="nav-link" href="">Username</a>
+                      <li class="nav-item mt-1 mx-1">
+                        <a id="userlink" class="btn btn-success" href="register.html">Create New Account</a>
                       </li>       
                       
-                      <li class="nav-item mx-1">
-                          <a id="signoutlink" class="nav-link" href="">Sign Out</a>
-                      </li> 
                   </ul>
               </form>
             </div>
@@ -56,9 +53,9 @@
                     <label class="form-check-label" for="flexSwitchCheckDefault">Keep me Logged In</label>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <button type="text" id="sub_btn" class="btn w-100 btn-outline-primary mb-3">Log In</button>
+                    <button type="text" id="sub_btn" class="btn w-100 btn-primary mb-3">Log In</button>
                 </div>
-                <a href="register.html" class="btn badge-secondary py-1 w-100">Want to create an account?</a>
+                <a href="register.html" class="btn badge-secondary py-1 w-100" style="text-decoration:underline">Want to create an account?</a>
             </div>
         </div>
 
@@ -136,6 +133,8 @@
                 window.location="grid.html"
             }
         }
+
+        
 //---------------------------------------------event--------------------------------------------------------------//
         submit.addEventListener('click', authenticateUser);
 
