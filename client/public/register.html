@@ -132,8 +132,7 @@ function check(){
                 alert("-username can only be alphanumeric\n-username must at least 5 characters\n-username cannot contain spaces");
                 return false;
             }
-            
-            console.log(pass.value);
+
             if(!passRegex.test(pass.value)){
                 alert("-enter a valid password\n-password must contain at least 1 lowercase alphabetical character" + 
                 "\n -password must contain at least 1 uppercase alphabetical character" + 
@@ -177,7 +176,8 @@ function check(){
                     })
                     .then(()=>{
                         alert("User registered succesfully");
-                        window.location="grid.html";
+                        console.log(username.value);
+                        login(username.value);
                     })
                     .catch((error)=>{
                         alert("error" + error);
@@ -186,6 +186,15 @@ function check(){
             });
 
         }
+
+//-----------------------------------------login--------------------------------------------------------------//
+    
+function login(user){
+                sessionStorage.setItem('user',JSON.stringify(user));
+                window.location="grid.html";
+        }
+
+        
 
 //---------------------------------------------event--------------------------------------------------------------//
 
