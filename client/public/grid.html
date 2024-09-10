@@ -1,82 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#000000" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href= "../src/index.css">
 
-<title>Muuri</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./grid.css">
+
+  <title>Muuri</title>
 </head>
+
 <body>
 
-<div class="grid">
+  <div class="grid">
 
-  <div class="item">
-    <div class="item-content">
-      First
+    <div class="item">
+      <div class="item-content">
+        <div id="weatherContent"></div>
+      </div>
     </div>
-  </div>
 
-  <div class="item">
-    <div class="item-content">
-      Second
+    <!-- <div class="item">
+      <div class="item-content">
+        <div id="gmailContent"></div>
+      </div>
+    </div> -->
+
+
+    <div class="item">
+      <div class="item-content">
+       <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" preloader-text="Loading" data-fw-param="154371/"></script> <!-- end feedwind code -->
+      </div>
     </div>
-  </div>
 
 
-  <div class="item">
-    <div class="item-content">
-      Third
+    <div class="item">
+      <div class="item-content">
+        <div id="calendarContent"></div>
+      </div>
     </div>
-  </div>
 
-
-  <div class="item">
-    <div class="item-content">
-      Fourth
+    <!-- <div class="item"> 
+      <div class="item-content">
+        Fifth
+      </div>
     </div>
-  </div>
 
-  <div class="item">
-    <div class="item-content">
-      Fifth
+    <div class="item">
+      <div class="item-content">
+        Sixth
+      </div>
     </div>
-  </div>
 
-  <div class="item">
-    <div class="item-content">
-      Sixth
+    <div class="item">
+      <div class="item-content">
+        Seventh
+      </div>
     </div>
-  </div>
 
-  <div class="item">
-    <div class="item-content">
-      Seventh
+    <div class="item">
+      <div class="item-content">
+        Eight
+      </div>
     </div>
-  </div>
 
-  <div class="item">
-    <div class="item-content">
-      Eight
+    <div class="item">
+      <div class="item-content">
+        Ninth
+      </div>
     </div>
-  </div>
 
-  <div class="item">
-    <div class="item-content">
-      Ninth
-    </div>
-  </div>
+    <div class="item">
+      <div class="item-content">
+        Tenth
+      </div>
+    </div> -->
 
-  <div class="item">
-    <div class="item-content">
-      Tenth
-    </div>
-  </div>
-
-  <!-- <div class="item">
+    <!-- <div class="item">
     <div class="item-content">
       <img src="http://lorempixel.com/200/200/cats/10/">
     </div>
@@ -86,22 +89,44 @@
     <div class="item-content">
       <img src="http://lorempixel.com/200/200/cats/8/">
     </div>
-  </div> --> 
+  </div> -->
+
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js"></script>
+
+  <script type="text/javascript">
+    const grid = new Muuri('.grid', {
+      dragEnabled: true,
+      dragAxis: 'xy'
   
-</div>
+    });
+    
+    
+  </script>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+  <script>
+    $(function () {
+      $("#weatherContent").load("weather_display.html");
+    });
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+    $(function () {
+      $("#gmailContent").load("mail.html");
+    });
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    $(function () {
+      $("#calendarContent").load("calendar.html");
+    });
+  </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js"></script>
-
-<script type="text/javascript">
-const grid = new Muuri('.grid',{
-dragEnabled: true,
-dragAxis: 'xy'
-});
-</script>
 </body>
+
 </html>
